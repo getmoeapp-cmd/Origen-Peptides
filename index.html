@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Origen Peptides — Péptidos de investigación · Colombia</title>
+<meta name="description" content="Origen Peptides Colombia. Made in USA. 3rd Party Tested. Péptidos de investigación con pureza superior al 99%." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper: #f5efe6;
+    --paper-warm: #ebe3d4;
+    --ink: #1f1612;
+    --ink-soft: #3d2e24;
+    --mid: #6b5544;
+    --taupe: #b09680;
+    --line: rgba(31,22,18,0.10);
+    --line-strong: rgba(31,22,18,0.22);
+    --accent: #8b6f4e;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter',system-ui,sans-serif;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+    line-height:1.5;
+    overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  button{font-family:inherit}
+
+  /* ===== GATE ===== */
+  .gate{position:fixed;inset:0;background:var(--paper);z-index:1000;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px;overflow:hidden}
+  .gate.hidden{display:none}
+  .gate-card{position:relative;max-width:520px;width:100%;text-align:center;z-index:2}
+  .gate-logo{font-family:'Fraunces',serif;font-weight:500;font-size:32px;letter-spacing:-.025em;color:var(--ink);margin-bottom:48px;display:inline-flex;align-items:baseline;gap:8px}
+  .gate-logo small{font-family:'Inter';font-weight:500;font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:var(--mid)}
+  .gate h1{font-family:'Fraunces',serif;font-weight:400;font-size:36px;line-height:1.1;margin-bottom:16px;letter-spacing:-.02em;color:var(--ink)}
+  .gate-lede{font-size:15px;line-height:1.6;color:var(--mid);max-width:440px;margin:0 auto 32px}
+  .gate-checks{text-align:left;margin:0 auto 24px;max-width:440px}
+  .gate-checks label{display:flex;gap:12px;align-items:flex-start;font-size:14px;line-height:1.5;cursor:pointer;padding:14px 0;color:var(--ink-soft);border-bottom:1px solid var(--line)}
+  .gate-checks label:last-child{border-bottom:none}
+  .gate-checks input[type="checkbox"]{appearance:none;width:18px;height:18px;border:1.5px solid var(--line-strong);border-radius:4px;flex:0 0 18px;margin-top:1px;cursor:pointer;position:relative;background:transparent;transition:all .15s}
+  .gate-checks input[type="checkbox"]:checked{background:var(--ink);border-color:var(--ink)}
+  .gate-checks input[type="checkbox"]:checked::after{content:"";position:absolute;left:5px;top:1px;width:5px;height:10px;border:solid var(--paper);border-width:0 1.8px 1.8px 0;transform:rotate(45deg)}
+  .gate-btn{display:inline-block;background:var(--ink);color:var(--paper);font-family:'Inter';font-weight:500;font-size:13px;letter-spacing:.12em;text-transform:uppercase;border:none;padding:16px 40px;border-radius:0;cursor:pointer;transition:all .25s;opacity:.3;pointer-events:none;width:100%;max-width:440px}
+  .gate-btn.ready{opacity:1;pointer-events:auto}
+  .gate-btn.ready:hover{background:var(--ink-soft)}
+  .gate-disc{font-size:11px;color:var(--mid);max-width:440px;margin:24px auto 0;line-height:1.55}
+  .gate-disc a{text-decoration:underline;color:var(--ink-soft)}
+  .gate-exit{margin-top:14px;font-size:12px;color:var(--mid)}
+  .gate-exit a{text-decoration:underline}
+
+  /* ===== NAV ===== */
+  nav{position:sticky;top:0;z-index:50;background:rgba(245,239,230,.85);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--line)}
+  .nav-inner{max-width:1400px;margin:0 auto;padding:20px 32px;display:flex;align-items:center;justify-content:space-between;gap:32px}
+  .brand{display:flex;align-items:baseline;gap:6px}
+  .brand-mark{font-family:'Fraunces',serif;font-weight:500;font-size:24px;letter-spacing:-.02em;color:var(--ink);line-height:1}
+  .brand-sub{font-family:'Inter';font-weight:500;font-size:9px;letter-spacing:.32em;text-transform:uppercase;color:var(--mid)}
+  .nav-links{display:flex;gap:36px;align-items:center}
+  .nav-links a{font-size:13px;font-weight:400;color:var(--ink-soft);transition:color .2s}
+  .nav-links a:hover{color:var(--ink)}
+  .nav-right{display:flex;gap:16px;align-items:center}
+  .nav-flag{font-size:11px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--mid)}
+  .cart-btn{background:transparent;color:var(--ink);padding:10px 0;font-size:13px;font-weight:500;cursor:pointer;border:none}
+  @media(max-width:880px){.nav-links{display:none}}
+
+  /* ===== HERO ===== */
+  .hero{padding:100px 32px 80px;max-width:1400px;margin:0 auto}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:80px;align-items:center}
+  .hero-eyebrow{font-size:11px;font-weight:500;letter-spacing:.32em;text-transform:uppercase;color:var(--mid);margin-bottom:28px;display:inline-flex;align-items:center;gap:12px}
+  .hero-eyebrow::before{content:"";width:32px;height:1px;background:var(--mid);opacity:.5}
+  .hero h1{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(48px,7vw,92px);line-height:.98;letter-spacing:-.04em;margin-bottom:32px;color:var(--ink)}
+  .hero h1 em{font-style:italic;font-weight:300;color:var(--mid)}
+  .hero-lede{font-size:17px;line-height:1.6;color:var(--mid);max-width:480px;margin-bottom:40px}
+  .hero-ctas{display:flex;gap:12px;flex-wrap:wrap}
+  .btn-primary{background:var(--ink);color:var(--paper);padding:16px 32px;border-radius:0;font-weight:500;font-size:12px;letter-spacing:.16em;text-transform:uppercase;display:inline-flex;align-items:center;gap:10px;transition:all .25s;border:none;cursor:pointer;font-family:inherit}
+  .btn-primary:hover{background:var(--ink-soft);transform:translateY(-1px)}
+  .btn-ghost{background:transparent;color:var(--ink);padding:16px 32px;font-weight:500;font-size:12px;letter-spacing:.16em;text-transform:uppercase;border:1px solid var(--line-strong);display:inline-flex;align-items:center;gap:10px;transition:all .2s}
+  .btn-ghost:hover{border-color:var(--ink);background:var(--paper-warm)}
+  .hero-trust{margin-top:72px;display:flex;gap:48px;align-items:center;padding-top:36px;border-top:1px solid var(--line);flex-wrap:wrap}
+  .trust-item{display:flex;flex-direction:column;gap:4px}
+  .trust-item .num{font-family:'Fraunces',serif;font-size:36px;font-weight:400;line-height:1;letter-spacing:-.02em;color:var(--ink)}
+  .trust-item .label{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--mid);font-weight:500}
+  .trust-divider{width:1px;height:48px;background:var(--line)}
+
+  .hero-visual{position:relative;display:flex;align-items:center;justify-content:center;min-height:560px}
+  .hero-photo-wrap{position:relative;width:100%;max-width:560px;aspect-ratio:1/1.05;display:flex;align-items:center;justify-content:center}
+  .hero-photo-bg{display:none}
+  .hero-photo{
+    position:relative;width:100%;height:auto;object-fit:contain;z-index:2;
+    filter:drop-shadow(0 30px 50px rgba(31,22,18,.28))
+  }
+  .hero-video{
+    /* Video is square (1:1) with its own dark moody background */
+    display:block;background:transparent;
+    filter:drop-shadow(0 30px 50px rgba(31,22,18,.35))
+  }
+  .hero-photo-tag{
+    position:absolute;bottom:32px;left:32px;z-index:3;
+    background:var(--paper);padding:16px 18px;
+    border:1px solid var(--line-strong);min-width:200px;
+    font-size:11px;font-weight:500
+  }
+  .hero-photo-tag-row{
+    display:flex;justify-content:space-between;gap:24px;padding:5px 0;
+    border-top:1px solid var(--line)
+  }
+  .hero-photo-tag-row:first-child{border-top:none;padding-top:0}
+  .hero-photo-tag-row span{color:var(--mid);letter-spacing:.08em;text-transform:uppercase;font-size:10px}
+  .hero-photo-tag-row strong{color:var(--ink);font-weight:600;font-family:'Fraunces',serif;letter-spacing:-.005em;font-size:13px}
+
+  @media(max-width:980px){
+    .hero{padding:60px 24px 60px}
+    .hero-grid{grid-template-columns:1fr;gap:40px}
+    .hero-visual{order:-1;min-height:auto}
+    .hero-photo-wrap{max-width:420px}
+    .hero-photo-tag{bottom:20px;left:20px;padding:12px 14px;min-width:170px}
+    .hero-trust{gap:24px}
+    .trust-divider{display:none}
+  }
+
+  /* ===== TICKER ===== */
+  .ticker{background:var(--ink);color:var(--paper);padding:20px 0;overflow:hidden}
+  .ticker-track{display:flex;gap:56px;animation:scroll 40s linear infinite;white-space:nowrap;font-family:'Inter',sans-serif;font-size:13px;font-weight:500;letter-spacing:.24em;text-transform:uppercase}
+  .ticker-track span{display:inline-flex;align-items:center;gap:56px;opacity:.85}
+  .ticker-track span::after{content:"✦";color:var(--accent);opacity:.7}
+  @keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+  /* ===== USA SECTION ===== */
+  .usa{padding:140px 32px;max-width:1400px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:100px;align-items:center}
+  .usa-label{font-size:11px;font-weight:500;letter-spacing:.32em;text-transform:uppercase;color:var(--mid);margin-bottom:24px;display:flex;align-items:center;gap:12px}
+  .usa-label .dot{width:6px;height:6px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 5px rgba(139,111,78,.15)}
+  .usa h2{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(40px,4.5vw,62px);line-height:1.02;letter-spacing:-.03em;margin-bottom:28px;color:var(--ink)}
+  .usa h2 em{font-style:italic;font-weight:300;color:var(--mid)}
+  .usa-body{font-size:16px;line-height:1.7;color:var(--mid);margin-bottom:14px;max-width:480px}
+  .usa-features{margin-top:48px;display:grid;grid-template-columns:1fr 1fr;gap:32px 40px;max-width:520px}
+  .usa-feat h4{font-family:'Fraunces',serif;font-weight:500;font-size:18px;letter-spacing:-.01em;margin-bottom:8px;color:var(--ink);display:flex;align-items:center;gap:10px}
+  .usa-feat h4::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--ink)}
+  .usa-feat p{font-size:14px;line-height:1.55;color:var(--mid);padding-left:16px}
+
+  .usa-visual{position:relative;aspect-ratio:1/1.1;background:var(--paper-warm);padding:48px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+  .usa-visual::before{content:"";position:absolute;inset:24px;border:1px solid var(--line);pointer-events:none}
+  .coa-card{position:relative;background:var(--paper);padding:36px;max-width:340px;width:100%;border:1px solid var(--line-strong)}
+  .coa-head{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:28px;padding-bottom:20px;border-bottom:1px solid var(--line)}
+  .coa-title{font-family:'Fraunces',serif;font-weight:500;font-size:20px;letter-spacing:-.015em;color:var(--ink);line-height:1.1}
+  .coa-sub{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--mid);margin-top:6px;font-weight:500}
+  .coa-stamp{font-size:9px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--ink);border:1px solid var(--ink);padding:4px 8px;line-height:1;white-space:nowrap}
+  .coa-line{display:flex;justify-content:space-between;padding:10px 0;border-top:1px solid var(--line);font-size:13px}
+  .coa-line:first-of-type{border-top:none;padding-top:0}
+  .coa-line span:first-child{color:var(--mid)}
+  .coa-line span:last-child{color:var(--ink);font-weight:500}
+  .coa-footer{margin-top:24px;padding-top:16px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--mid);font-weight:500}
+  .coa-footer .check{color:#2d6a3d;font-weight:600}
+
+  @media(max-width:880px){
+    .usa{grid-template-columns:1fr;gap:48px;padding:80px 24px}
+    .usa-features{grid-template-columns:1fr}
+  }
+
+  /* ===== CATALOG ===== */
+  .catalog{padding:120px 32px;max-width:1400px;margin:0 auto;border-top:1px solid var(--line)}
+  .catalog-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:64px;gap:32px;flex-wrap:wrap}
+  .catalog-head-l h2{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(40px,5vw,64px);line-height:1;letter-spacing:-.03em;color:var(--ink)}
+  .catalog-head-l h2 em{font-style:italic;font-weight:300;color:var(--mid)}
+  .catalog-head-l p{margin-top:20px;font-size:15px;color:var(--mid);max-width:440px;line-height:1.6}
+  .filter-row{display:flex;gap:6px;flex-wrap:wrap}
+  .filter-chip{padding:10px 18px;border:1px solid var(--line-strong);background:transparent;color:var(--ink-soft);cursor:pointer;transition:all .2s;font-family:inherit;font-size:12px;font-weight:500;letter-spacing:.06em}
+  .filter-chip:hover{border-color:var(--ink);color:var(--ink)}
+  .filter-chip.active{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+
+  .grid-wrap{border:1px solid var(--line);background:var(--line)}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line)}
+  @media(max-width:980px){.grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:620px){.grid{grid-template-columns:1fr}}
+
+  .card{background:var(--paper);transition:all .3s;cursor:pointer;position:relative;display:flex;flex-direction:column}
+  .card:hover{background:var(--paper-warm)}
+  .card-img{aspect-ratio:1/1;background:var(--paper-warm);position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;border-bottom:1px solid var(--line)}
+  .card:hover .card-img{background:#e0d6c3}
+  .card-badge{position:absolute;top:16px;left:16px;font-size:9px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;padding:5px 10px;z-index:2;color:var(--ink);border:1px solid var(--ink);background:var(--paper)}
+  .card-tested{position:absolute;top:16px;right:16px;font-size:9px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--mid);z-index:2;display:flex;align-items:center;gap:4px}
+  .card-tested::before{content:"";width:5px;height:5px;border-radius:50%;background:#2d6a3d}
+  .card-vial{width:auto;height:75%;filter:drop-shadow(0 16px 24px rgba(31,22,18,.18));transition:transform .4s ease}
+  .card:hover .card-vial{transform:scale(1.04) translateY(-4px)}
+
+  .card-body{padding:24px;flex:1;display:flex;flex-direction:column}
+  .card-cat{font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--mid);margin-bottom:10px;font-weight:500}
+  .card-title{font-family:'Fraunces',serif;font-weight:500;font-size:22px;letter-spacing:-.015em;margin-bottom:6px;line-height:1.1;color:var(--ink)}
+  .card-desc{font-size:13px;line-height:1.55;color:var(--mid);margin-bottom:20px;flex:1}
+  .card-meta{display:flex;justify-content:space-between;align-items:center;padding-top:18px;border-top:1px solid var(--line)}
+  .card-price{font-family:'Fraunces',serif;font-size:22px;font-weight:500;letter-spacing:-.01em;color:var(--ink)}
+  .card-price small{font-size:11px;font-weight:500;color:var(--mid);font-family:'Inter';letter-spacing:.04em;margin-left:4px}
+  .card-add{padding:10px 16px;background:transparent;color:var(--ink);border:1px solid var(--line-strong);cursor:pointer;font-size:11px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;transition:all .2s}
+  .card-add:hover{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+
+  /* ===== QUALITY (dark) ===== */
+  .quality{background:var(--ink);color:var(--paper);padding:120px 32px}
+  .quality-inner{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:1fr 1.4fr;gap:80px;align-items:flex-start}
+  .quality-label{font-size:11px;font-weight:500;letter-spacing:.32em;text-transform:uppercase;opacity:.6;margin-bottom:24px}
+  .quality h2{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(38px,4vw,56px);line-height:1.02;letter-spacing:-.03em;color:var(--paper)}
+  .quality h2 em{font-style:italic;font-weight:300;opacity:.7}
+  .quality-points{display:flex;flex-direction:column}
+  .qp{padding:32px 0;border-top:1px solid rgba(245,239,230,.12);display:grid;grid-template-columns:60px 1fr;gap:24px;align-items:start}
+  .qp:last-child{border-bottom:1px solid rgba(245,239,230,.12)}
+  .qp-num{font-family:'Fraunces',serif;font-size:14px;font-weight:400;opacity:.5;letter-spacing:.06em}
+  .qp h4{font-family:'Fraunces',serif;font-weight:500;font-size:22px;margin-bottom:10px;letter-spacing:-.015em}
+  .qp p{font-size:14px;line-height:1.6;opacity:.7}
+  @media(max-width:880px){
+    .quality-inner{grid-template-columns:1fr;gap:48px}
+    .qp{grid-template-columns:1fr}
+  }
+
+  /* ===== FAQ ===== */
+  .faq{padding:140px 32px;max-width:880px;margin:0 auto}
+  .faq h2{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(38px,4.5vw,58px);line-height:1;letter-spacing:-.03em;text-align:center;margin-bottom:16px;color:var(--ink)}
+  .faq h2 em{font-style:italic;font-weight:300;color:var(--mid)}
+  .faq-sub{text-align:center;font-size:15px;color:var(--mid);margin-bottom:64px}
+  .faq-list{border-top:1px solid var(--line)}
+  .faq-item{border-bottom:1px solid var(--line)}
+  .faq-q{width:100%;background:transparent;border:none;color:var(--ink);font-family:inherit;text-align:left;padding:28px 0;display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-size:17px;font-weight:500;letter-spacing:-.005em}
+  .faq-q .ico{width:32px;height:32px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-left:24px;transition:transform .3s;font-weight:300;font-size:20px;border:1px solid var(--line-strong)}
+  .faq-item.open .faq-q .ico{transform:rotate(45deg);background:var(--ink);color:var(--paper);border-color:var(--ink)}
+  .faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease;font-size:14px;line-height:1.7;color:var(--mid)}
+  .faq-a-inner{padding:0 0 28px;max-width:720px}
+
+  /* ===== CTA ===== */
+  .affiliate{padding:140px 32px;max-width:1400px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:100px;align-items:center}
+  .affiliate-label{font-size:11px;font-weight:500;letter-spacing:.32em;text-transform:uppercase;color:var(--mid);margin-bottom:24px;display:flex;align-items:center;gap:12px}
+  .affiliate-label .dot{width:6px;height:6px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 5px rgba(139,111,78,.15)}
+  .affiliate h2{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(40px,4.5vw,62px);line-height:1.02;letter-spacing:-.03em;margin-bottom:28px;color:var(--ink)}
+  .affiliate h2 em{font-style:italic;font-weight:300;color:var(--mid)}
+  .affiliate-body{font-size:16px;line-height:1.7;color:var(--mid);margin-bottom:14px;max-width:480px}
+  .affiliate-perks{margin-top:40px;display:flex;flex-direction:column;gap:18px;max-width:480px}
+  .affiliate-perk{display:flex;gap:18px;align-items:flex-start;padding:0;border-top:1px solid var(--line);padding-top:18px}
+  .affiliate-perk:first-child{border-top:none;padding-top:0}
+  .affiliate-perk-num{font-family:'Fraunces',serif;font-size:14px;font-weight:500;color:var(--accent);letter-spacing:.05em;flex:0 0 24px}
+  .affiliate-perk-text strong{display:block;font-family:'Fraunces',serif;font-weight:500;font-size:16px;color:var(--ink);margin-bottom:4px;letter-spacing:-.005em}
+  .affiliate-perk-text p{font-size:14px;line-height:1.55;color:var(--mid);margin:0}
+  .affiliate-cta{margin-top:40px}
+
+  /* Affiliate application modal */
+  .modal-overlay{position:fixed;inset:0;background:rgba(31,22,18,.55);backdrop-filter:blur(4px);z-index:1000;display:none;align-items:center;justify-content:center;padding:24px;animation:overlayIn .3s ease}
+  .modal-overlay.is-open{display:flex}
+  @keyframes overlayIn{from{opacity:0}to{opacity:1}}
+  .modal{background:var(--paper);max-width:560px;width:100%;max-height:92vh;overflow-y:auto;padding:48px 48px 40px;position:relative;animation:modalIn .35s cubic-bezier(.2,.7,.2,1)}
+  @keyframes modalIn{from{transform:translateY(20px);opacity:0}to{transform:translateY(0);opacity:1}}
+  .modal-close{position:absolute;top:20px;right:20px;background:none;border:none;font-size:24px;color:var(--mid);cursor:pointer;padding:8px;line-height:1;transition:color .2s}
+  .modal-close:hover{color:var(--ink)}
+  .modal-eyebrow{font-size:11px;font-weight:500;letter-spacing:.32em;text-transform:uppercase;color:var(--mid);margin-bottom:16px}
+  .modal h3{font-family:'Fraunces',serif;font-weight:400;font-size:32px;line-height:1.1;letter-spacing:-.025em;margin-bottom:12px;color:var(--ink)}
+  .modal h3 em{font-style:italic;font-weight:300;color:var(--mid)}
+  .modal-intro{font-size:14px;line-height:1.6;color:var(--mid);margin-bottom:32px}
+  .form-group{margin-bottom:20px}
+  .form-group label{display:block;font-size:11px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--mid);margin-bottom:8px}
+  .form-group input,.form-group textarea,.form-group select{width:100%;padding:14px 16px;background:var(--paper-warm);border:1px solid var(--line);font-family:'Inter';font-size:14px;color:var(--ink);border-radius:0;transition:border-color .2s;font-weight:400}
+  .form-group input:focus,.form-group textarea:focus,.form-group select:focus{outline:none;border-color:var(--ink)}
+  .form-group textarea{resize:vertical;min-height:90px;font-family:'Inter'}
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .form-submit{width:100%;background:var(--ink);color:var(--paper);font-family:'Inter';font-weight:500;font-size:13px;letter-spacing:.16em;text-transform:uppercase;border:none;padding:18px;cursor:pointer;transition:background .2s;margin-top:8px}
+  .form-submit:hover{background:var(--ink-soft)}
+  .modal-success{text-align:center;padding:20px 0}
+  .modal-success-icon{width:56px;height:56px;border-radius:50%;background:var(--accent);color:var(--paper);display:inline-flex;align-items:center;justify-content:center;font-size:28px;margin-bottom:20px;font-family:'Fraunces',serif}
+  @media(max-width:600px){
+    .modal{padding:36px 24px 28px}
+    .modal h3{font-size:26px}
+    .form-row{grid-template-columns:1fr}
+  }
+
+  .affiliate-card{background:var(--paper-warm);padding:48px 40px;position:relative;border:1px solid var(--line)}
+  .affiliate-card-eyebrow{font-size:10px;font-weight:500;letter-spacing:.32em;text-transform:uppercase;color:var(--mid);margin-bottom:32px;display:flex;justify-content:space-between;align-items:center}
+  .affiliate-card-eyebrow .badge{background:var(--ink);color:var(--paper);padding:5px 10px;font-size:9px;letter-spacing:.18em}
+  .affiliate-discount{font-family:'Fraunces',serif;font-weight:400;font-size:120px;line-height:.9;letter-spacing:-.05em;color:var(--ink);margin-bottom:8px}
+  .affiliate-discount sup{font-size:48px;vertical-align:top;font-style:italic;font-weight:300;color:var(--mid);margin-left:4px;line-height:1}
+  .affiliate-discount-label{font-family:'Fraunces',serif;font-style:italic;font-weight:300;font-size:22px;color:var(--mid);margin-bottom:40px;letter-spacing:-.005em}
+  .affiliate-code-row{display:flex;align-items:center;justify-content:space-between;padding:16px 18px;background:var(--paper);border:1px dashed var(--line-strong);margin-bottom:14px}
+  .affiliate-code-row span{font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--mid)}
+  .affiliate-code-row strong{font-family:'Fraunces',serif;font-weight:500;font-size:22px;letter-spacing:.04em;color:var(--ink)}
+  .affiliate-code-note{font-size:12px;color:var(--mid);line-height:1.55;font-style:italic}
+
+  @media(max-width:980px){
+    .affiliate{padding:80px 24px;grid-template-columns:1fr;gap:48px}
+    .affiliate-card{padding:36px 28px}
+    .affiliate-discount{font-size:96px}
+    .affiliate-discount sup{font-size:36px}
+  }
+
+  .cta{padding:120px 32px;max-width:1200px;margin:0 auto;text-align:center}
+  .cta h2{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(44px,5.5vw,76px);line-height:1;letter-spacing:-.035em;margin-bottom:24px;color:var(--ink)}
+  .cta h2 em{font-style:italic;font-weight:300;color:var(--mid)}
+  .cta p{font-size:17px;color:var(--mid);max-width:520px;margin:0 auto 40px;line-height:1.6}
+  .cta-ctas{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+
+  /* ===== FOOTER ===== */
+  footer{background:var(--paper-warm);color:var(--ink);padding:80px 32px 32px;border-top:1px solid var(--line)}
+  .foot-inner{max-width:1400px;margin:0 auto}
+  .foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;padding-bottom:60px;border-bottom:1px solid var(--line)}
+  .foot-brand .brand-mark{font-size:32px}
+  .foot-brand p{margin-top:18px;font-size:14px;color:var(--mid);line-height:1.65;max-width:320px}
+  .foot-col h5{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--mid);margin-bottom:24px;font-weight:600}
+  .foot-col ul{list-style:none;display:flex;flex-direction:column;gap:14px}
+  .foot-col a{font-size:14px;color:var(--ink-soft);transition:color .2s}
+  .foot-col a:hover{color:var(--ink)}
+  .foot-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:32px;font-size:12px;color:var(--mid);flex-wrap:wrap;gap:14px}
+  .foot-disc{max-width:780px;font-size:11px;line-height:1.6;color:var(--mid);margin-top:28px;padding-top:28px;border-top:1px solid var(--line)}
+  @media(max-width:880px){.foot-grid{grid-template-columns:1fr 1fr;gap:36px}}
+
+  .reveal{opacity:0;transform:translateY(20px);transition:opacity .8s ease,transform .8s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  /* ===== real product photo in card ===== */
+  .card-photo{height:82%;width:auto;max-width:88%;object-fit:contain;filter:drop-shadow(0 18px 26px rgba(31,22,18,.20))}
+  .card:hover .card-photo{transform:scale(1.04) translateY(-4px)}
+  /* ===== CART ===== */
+  .cart-overlay{position:fixed;inset:0;background:rgba(31,22,18,.45);z-index:900;opacity:0;visibility:hidden;transition:.3s}
+  .cart-overlay.open{opacity:1;visibility:visible}
+  .cart-drawer{position:fixed;top:0;right:0;height:100%;width:420px;max-width:92vw;background:var(--paper);z-index:901;transform:translateX(100%);transition:transform .4s cubic-bezier(.2,.8,.2,1);display:flex;flex-direction:column;border-left:1px solid var(--line-strong)}
+  .cart-drawer.open{transform:none}
+  .cart-dhead{display:flex;align-items:center;justify-content:space-between;padding:24px 28px;border-bottom:1px solid var(--line)}
+  .cart-dhead h3{font-family:'Fraunces',serif;font-weight:500;font-size:24px;letter-spacing:-.02em}
+  .cart-close{background:none;border:none;font-size:26px;cursor:pointer;color:var(--mid);line-height:1}
+  .cart-close:hover{color:var(--ink)}
+  .cart-items{flex:1;overflow-y:auto;padding:8px 28px}
+  .cart-empty{text-align:center;color:var(--mid);padding:64px 16px;font-size:14px;line-height:1.6}
+  .cart-row{display:flex;gap:14px;padding:18px 0;border-bottom:1px solid var(--line)}
+  .cart-thumb{width:52px;height:52px;flex:0 0 52px;background:var(--ink);color:var(--paper);display:flex;align-items:center;justify-content:center;text-align:center;font-size:9px;font-weight:600;letter-spacing:.03em;padding:4px;line-height:1.1}
+  .cart-info{flex:1;min-width:0}
+  .cart-name{font-family:'Fraunces',serif;font-weight:500;font-size:16px;letter-spacing:-.01em;color:var(--ink)}
+  .cart-sub{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--mid);margin-top:3px}
+  .cart-line{font-family:'Fraunces',serif;font-weight:500;color:var(--ink-soft);font-size:15px;margin-top:6px}
+  .cart-qty{display:inline-flex;align-items:center;border:1px solid var(--line-strong);margin-top:8px}
+  .cart-qty button{width:28px;height:28px;background:none;border:none;cursor:pointer;color:var(--ink);font-size:15px;line-height:1}
+  .cart-qty button:hover{background:var(--paper-warm)}
+  .cart-qty span{min-width:30px;text-align:center;font-size:13px;font-weight:600}
+  .cart-rm{background:none;border:none;color:var(--mid);font-size:10px;letter-spacing:.08em;text-decoration:underline;cursor:pointer;align-self:flex-start;text-transform:uppercase}
+  .cart-rm:hover{color:#9a4a36}
+  .cart-dfoot{padding:24px 28px;border-top:1px solid var(--line);background:var(--paper-warm)}
+  .cart-total{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px}
+  .cart-total .l{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--mid)}
+  .cart-total .v{font-family:'Fraunces',serif;font-size:28px;font-weight:500;color:var(--ink)}
+  .cart-note{font-size:11px;color:var(--mid);line-height:1.55;margin-bottom:16px}
+  .cart-wa{width:100%;background:#1e7a44;color:var(--paper);border:none;cursor:pointer;padding:16px;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;display:flex;align-items:center;justify-content:center;gap:10px;transition:.25s}
+  .cart-wa:hover:not(:disabled){background:#176336}
+  .cart-wa:disabled{opacity:.3;cursor:not-allowed}
+  .cart-add.added,.card-add.added{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+  .toast{position:fixed;bottom:28px;left:50%;transform:translateX(-50%) translateY(16px);background:var(--ink);color:var(--paper);padding:13px 22px;font-size:13px;letter-spacing:.04em;z-index:1200;opacity:0;transition:.3s;pointer-events:none}
+  .toast.show{opacity:1;transform:translateX(-50%)}
+</style>
+</head>
+<body>
+<!-- CART DRAWER -->
+<div class="cart-overlay" id="cartOverlay"></div>
+<aside class="cart-drawer" id="cartDrawer" aria-label="Carrito de compras">
+  <div class="cart-dhead"><h3>Tu carrito</h3><button class="cart-close" id="cartClose" aria-label="Cerrar">&times;</button></div>
+  <div class="cart-items" id="cartItems"></div>
+  <div class="cart-dfoot">
+    <div class="cart-total"><span class="l">Total</span><span class="v" id="cartTotalVal">$0</span></div>
+    <p class="cart-note">El pago y la coordinación de envío se finalizan por WhatsApp con un asesor del equipo.</p>
+    <button class="cart-wa" id="cartWa" disabled>Finalizar pedido por WhatsApp</button>
+  </div>
+</aside>
+<div class="toast" id="toast"></div>
+
+
+<!-- GATE -->
+<div class="gate" id="gate">
+  <div class="gate-card">
+    <div class="gate-logo">Origen<small>Peptides</small></div>
+    <h1>Verificación de investigador</h1>
+    <p class="gate-lede">Origen Peptides comercializa péptidos de investigación exclusivamente a investigadores cualificados y laboratorios para uso <em>in vitro</em> y de laboratorio. Por favor confirme antes de continuar.</p>
+    <div class="gate-checks">
+      <label><input type="checkbox" class="gc"> <span>Soy mayor de 21 años.</span></label>
+      <label><input type="checkbox" class="gc"> <span>Confirmo que soy un investigador cualificado y que compro únicamente para investigación <em>in vitro</em> / de laboratorio — no para uso humano ni veterinario.</span></label>
+    </div>
+    <button class="gate-btn" id="gateBtn">Entrar a Origen</button>
+    <p class="gate-disc">Al continuar confirma que las declaraciones anteriores son verdaderas. Los productos no son para uso humano ni veterinario, no son para uso en procedimientos diagnósticos, y no han sido evaluados por la FDA. <a href="#disclaimer">Aviso legal completo</a>.</p>
+    <p class="gate-exit">¿No es investigador? <a href="https://www.google.com">Salir</a></p>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a class="brand" href="#">
+      <span class="brand-mark">Origen</span>
+      <span class="brand-sub">Peptides</span>
+    </a>
+    <div class="nav-links">
+      <a href="#catalogo">Catálogo</a>
+      <a href="#calidad">Calidad</a>
+      <a href="#afiliados">Afiliados</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+    <div class="nav-right">
+      <span class="nav-flag">🇨🇴 COL · ES</span>
+      <button class="cart-btn" id="cartBtn">Carrito (<span id="cartCount">0</span>)</button>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid">
+    <div class="reveal in">
+      <div class="hero-eyebrow">Made in USA · 3rd Party Tested</div>
+      <h1>
+        Ciencia precisa.<br>
+        <em>Origen verificado.</em>
+      </h1>
+      <p class="hero-lede">
+        Péptidos de investigación de grado farmacéutico, sintetizados en Estados Unidos y validados por laboratorios independientes. Cada lote llega a Colombia con su certificado de análisis y una pureza superior al 99%.
+      </p>
+      <div class="hero-ctas">
+        <a href="#catalogo" class="btn-primary">Ver catálogo →</a>
+        <a href="#calidad" class="btn-ghost">Nuestro proceso</a>
+      </div>
+      <div class="hero-trust">
+        <div class="trust-item"><div class="num">&gt;99%</div><div class="label">Pureza HPLC</div></div>
+        <div class="trust-divider"></div>
+        <div class="trust-item"><div class="num">USA</div><div class="label">Made & Tested</div></div>
+        <div class="trust-divider"></div>
+        <div class="trust-item"><div class="num">3rd</div><div class="label">Party Tested</div></div>
+        <div class="trust-divider"></div>
+        <div class="trust-item"><div class="num">48h</div><div class="label">Envío nacional</div></div>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="hero-photo-wrap">
+        <div class="hero-photo-bg"></div>
+        <video class="hero-photo hero-video" autoplay muted loop playsinline preload="auto" poster="assets/origen-poster.jpg" aria-label="Origen Peptides — vial y caja del producto"><source src="assets/origen.webm" type="video/webm" /><source src="assets/origen.mp4" type="video/mp4" /></video>
+        <div class="hero-photo-tag">
+          <div class="hero-photo-tag-row"><span>Producto</span><strong>GHK-Cu 100MG</strong></div>
+          <div class="hero-photo-tag-row"><span>Pureza</span><strong>&gt;99%</strong></div>
+          <div class="hero-photo-tag-row"><span>Lote</span><strong>OP-24-1182</strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-track">
+    <span>Made in USA</span><span>3rd Party Tested</span><span>HPLC &gt;99%</span><span>COA por lote</span><span>Envío en Colombia 48h</span><span>Research use only</span>
+    <span>Made in USA</span><span>3rd Party Tested</span><span>HPLC &gt;99%</span><span>COA por lote</span><span>Envío en Colombia 48h</span><span>Research use only</span>
+  </div>
+</div>
+
+<!-- ORIGEN VERIFICADO -->
+<section class="usa">
+  <div class="reveal in">
+    <div class="usa-label"><span class="dot"></span> Origen verificado</div>
+    <h2>Sintetizado en EE.UU.,<br><em>verificado para Colombia.</em></h2>
+    <p class="usa-body">Cada vial Origen se produce en Estados Unidos mediante síntesis en fase sólida, se analiza en laboratorios independientes y se importa a Colombia con su certificado de análisis (COA) por número de lote.</p>
+    <div class="usa-features">
+      <div class="usa-feat"><h4>Pureza &gt;99%</h4><p>Verificada por HPLC y espectrometría de masas en cada lote.</p></div>
+      <div class="usa-feat"><h4>COA por lote</h4><p>Certificado de análisis disponible para cada número de lote.</p></div>
+      <div class="usa-feat"><h4>Cadena de frío</h4><p>Importación y distribución con monitoreo de temperatura.</p></div>
+      <div class="usa-feat"><h4>Envío 48h</h4><p>Despacho nacional con guía de rastreo a todo el país.</p></div>
+    </div>
+  </div>
+  <div class="usa-visual">
+    <img src="assets/ghkcu-lifestyle.jpg" alt="Vial y caja GHK-Cu de Origen Peptides" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover" />
+  </div>
+</section>
+
+<!-- CATALOG -->
+<section class="catalog" id="catalogo">
+  <div class="catalog-head">
+    <div class="catalog-head-l">
+      <h2>Catálogo de <em>investigación</em></h2>
+      <p>Selección curada de péptidos de uso más solicitado en investigación. Disponibles para envío a todo el territorio colombiano.</p>
+    </div>
+    <div class="filter-row">
+      <button class="filter-chip active" data-cat="all">Todos</button>
+      <button class="filter-chip" data-cat="regen">Regeneración</button>
+      <button class="filter-chip" data-cat="cogn">Cognitivo</button>
+      <button class="filter-chip" data-cat="meta">Metabólico</button>
+      <button class="filter-chip" data-cat="long">Longevidad</button>
+    </div>
+  </div>
+  <div class="grid-wrap">
+    <div class="grid" id="productGrid"></div>
+  </div>
+</section>
+
+<!-- QUALITY -->
+<section class="quality" id="calidad">
+  <div class="quality-inner">
+    <div>
+      <div class="quality-label">El proceso</div>
+      <h2>Cada vial,<br><em>una garantía.</em></h2>
+    </div>
+    <div class="quality-points">
+      <div class="qp">
+        <div class="qp-num">01</div>
+        <div>
+          <h4>Síntesis en fase sólida</h4>
+          <p>Producción mediante SPPS estándar de la industria farmacéutica, con purificación posterior por cromatografía preparativa en planta estadounidense.</p>
+        </div>
+      </div>
+      <div class="qp">
+        <div class="qp-num">02</div>
+        <div>
+          <h4>3rd Party Tested</h4>
+          <p>Cada lote se envía a laboratorios externos en EE.UU. para análisis HPLC y espectrometría de masas. Los resultados se publican en el COA.</p>
+        </div>
+      </div>
+      <div class="qp">
+        <div class="qp-num">03</div>
+        <div>
+          <h4>Empaque con barrera</h4>
+          <p>Viales de vidrio tipo I, sellado de butilo, tapa de aluminio grado farmacéutico. Liofilizado estable a temperatura ambiente.</p>
+        </div>
+      </div>
+      <div class="qp">
+        <div class="qp-num">04</div>
+        <div>
+          <h4>Cadena de frío</h4>
+          <p>Importación con monitoreo de temperatura. Distribución en Colombia mediante operador especializado en bioproductos.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AFFILIATE -->
+<section class="affiliate" id="afiliados">
+  <div>
+    <div class="affiliate-label"><span class="dot"></span> Programa de afiliados</div>
+    <h2>Comparta lo que <em>realmente funciona.</em></h2>
+    <p class="affiliate-body">Si usted es creador de contenido, influencer o investigador con audiencia, puede unirse a nuestro programa de afiliados. Comparta un código personalizado con su comunidad y reciba comisión por cada compra realizada.</p>
+    <div class="affiliate-perks">
+      <div class="affiliate-perk">
+        <div class="affiliate-perk-num">01</div>
+        <div class="affiliate-perk-text"><strong>5% de comisión</strong><p>Recibe el 5% del valor de cada pedido completado bajo su código, pagado mensualmente vía transferencia bancaria o Nequi.</p></div>
+      </div>
+      <div class="affiliate-perk">
+        <div class="affiliate-perk-num">02</div>
+        <div class="affiliate-perk-text"><strong>10% de descuento para su audiencia</strong><p>Su código otorga un 10% de descuento automático a sus seguidores en cualquier producto del catálogo.</p></div>
+      </div>
+      <div class="affiliate-perk">
+        <div class="affiliate-perk-num">03</div>
+        <div class="affiliate-perk-text"><strong>Dashboard en tiempo real</strong><p>Acceso a un panel con métricas de clics, conversiones y comisiones acumuladas. Sin sorpresas, sin retrasos.</p></div>
+      </div>
+      <div class="affiliate-perk">
+        <div class="affiliate-perk-num">04</div>
+        <div class="affiliate-perk-text"><strong>Material listo para usar</strong><p>Recibe fotografía profesional del producto, copy en español aprobado y guías de comunicación responsable.</p></div>
+      </div>
+    </div>
+    <div class="affiliate-cta">
+      <button type="button" class="btn-primary" onclick="openAffiliateModal()">Postular al programa →</button>
+    </div>
+  </div>
+  <div class="affiliate-card">
+    <div class="affiliate-card-eyebrow"><span>Ejemplo de código</span><span class="badge">ACTIVO</span></div>
+    <div class="affiliate-discount">10<sup>%</sup></div>
+    <div class="affiliate-discount-label">descuento para tu audiencia</div>
+    <div class="affiliate-code-row"><span>Código</span><strong>ORIGEN10</strong></div>
+    <div class="affiliate-code-row"><span>Tu comisión</span><strong>5%</strong></div>
+    <p class="affiliate-code-note">Cada creador recibe un código único vinculado a su perfil. Validez ilimitada, aplicable a todo el catálogo.</p>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <h2>Péptidos en los que <em>puedes confiar.</em></h2>
+  <p>Origen Peptides para todo el país. USA Made &amp; 3rd Party Tested. Cada lote, cada vial, cada vez.</p>
+  <div class="cta-ctas">
+    <a href="#catalogo" class="btn-primary">Explorar catálogo →</a>
+    <a href="#contacto" class="btn-ghost">Contactar al equipo</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="contacto">
+  <div class="foot-inner">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="brand">
+          <span class="brand-mark">Origen</span>
+          <span class="brand-sub" style="margin-left:6px">Peptides</span>
+        </div>
+        <p>Péptidos de investigación de grado farmacéutico. Made in USA, 3rd Party Tested. Importados y distribuidos en Colombia bajo cadena de frío.</p>
+      </div>
+      <div class="foot-col">
+        <h5>Catálogo</h5>
+        <ul>
+          <li><a href="#">Regeneración</a></li>
+          <li><a href="#">Cognitivo</a></li>
+          <li><a href="#">Metabólico</a></li>
+          <li><a href="#">Longevidad</a></li>
+          <li><a href="#">Mezclas</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h5>Empresa</h5>
+        <ul>
+          <li><a href="#">Sobre nosotros</a></li>
+          <li><a href="#">Nuestro proceso</a></li>
+          <li><a href="#">COA público</a></li>
+          <li><a href="#">Prensa</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h5>Soporte</h5>
+        <ul>
+          <li><a href="#">Contacto</a></li>
+          <li><a href="#">Envíos</a></li>
+          <li><a href="#">Devoluciones</a></li>
+          <li><a href="#" id="disclaimer">Aviso legal</a></li>
+          <li><a href="#">Privacidad</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="foot-disc">
+      Aviso legal: Los productos Origen Peptides son péptidos de investigación destinados exclusivamente a uso <em>in vitro</em> y de laboratorio por investigadores cualificados. NO son para consumo humano, uso veterinario, uso diagnóstico ni terapéutico. No han sido evaluados por la FDA de Estados Unidos ni por el INVIMA de Colombia. La venta y compra de estos productos no constituye una recomendación médica.
+    </p>
+    <div class="foot-bottom">
+      <span>© 2026 Origen Peptides Colombia. Todos los derechos reservados.</span>
+      <span>Bogotá D.C., Colombia</span>
+    </div>
+  </div>
+</footer>
+
+<!-- AFFILIATE APPLICATION MODAL -->
+<div class="modal-overlay" id="affiliateModal" onclick="if(event.target===this)closeAffiliateModal()">
+  <div class="modal" role="dialog" aria-labelledby="affiliateModalTitle">
+    <button class="modal-close" onclick="closeAffiliateModal()" aria-label="Cerrar">×</button>
+    <div id="affiliateFormView">
+      <div class="modal-eyebrow">Programa de afiliados</div>
+      <h3 id="affiliateModalTitle">Postule a <em>Origen Peptides.</em></h3>
+      <p class="modal-intro">Cuéntenos sobre usted y su audiencia. Revisamos cada postulación en 48–72 horas hábiles y le contactaremos con los próximos pasos.</p>
+      <form id="affiliateForm" onsubmit="submitAffiliateForm(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="afNombre">Nombre completo</label>
+            <input id="afNombre" name="nombre" type="text" required />
+          </div>
+          <div class="form-group">
+            <label for="afCiudad">Ciudad</label>
+            <input id="afCiudad" name="ciudad" type="text" required />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="afEmail">Correo electrónico</label>
+            <input id="afEmail" name="email" type="email" required />
+          </div>
+          <div class="form-group">
+            <label for="afTel">Teléfono / WhatsApp</label>
+            <input id="afTel" name="telefono" type="tel" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="afRedes">Redes sociales (Instagram, TikTok, YouTube)</label>
+          <input id="afRedes" name="redes" type="text" placeholder="@usuario, @canal, etc." required />
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="afAudiencia">Tamaño de audiencia</label>
+            <select id="afAudiencia" name="audiencia" required>
+              <option value="">Seleccionar...</option>
+              <option>Menos de 5,000</option>
+              <option>5,000 – 25,000</option>
+              <option>25,000 – 100,000</option>
+              <option>100,000 – 500,000</option>
+              <option>Más de 500,000</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="afNicho">Nicho / temática</label>
+            <input id="afNicho" name="nicho" type="text" placeholder="Salud, biohacking, ciencia..." required />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="afMensaje">¿Por qué quiere unirse al programa?</label>
+          <textarea id="afMensaje" name="mensaje" placeholder="Cuéntenos brevemente sobre su contenido y por qué Origen Peptides encaja con su audiencia."></textarea>
+        </div>
+        <button type="submit" class="form-submit">Enviar postulación</button>
+      </form>
+    </div>
+    <div id="affiliateSuccessView" style="display:none">
+      <div class="modal-success">
+        <div class="modal-success-icon">✓</div>
+        <h3>Postulación recibida.</h3>
+        <p class="modal-intro" style="margin-top:12px">Gracias por su interés en Origen Peptides. Revisaremos su perfil y le contactaremos por correo en las próximas 48–72 horas hábiles con los próximos pasos.</p>
+        <button type="button" class="form-submit" onclick="closeAffiliateModal()" style="margin-top:16px">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Verification gate
+  const checks=document.querySelectorAll('.gc');
+  const gateBtn=document.getElementById('gateBtn');
+  const gate=document.getElementById('gate');
+  function refreshBtn(){
+    const ok=[...checks].every(c=>c.checked);
+    gateBtn.classList.toggle('ready',ok);
+  }
+  checks.forEach(c=>c.addEventListener('change',refreshBtn));
+  gateBtn.addEventListener('click',()=>{
+    if(!gateBtn.classList.contains('ready'))return;
+    gate.classList.add('hidden');
+    document.body.style.overflow='auto';
+  });
+  document.body.style.overflow='hidden';
+
+  // Products — catálogo COL, precios competitivos
+  const products=[
+    {id:'bpc157',name:'BPC-157',cat:'regen',catLabel:'Regeneración',size:'10 MG',price:291000,featured:true,img:'assets/vial-bpc157.png',desc:'Pentadecapéptido derivado de proteína gástrica. Estudios in vitro de reparación tisular.'},
+    {id:'glp1sm',name:'GLP-1 (SM)',cat:'meta',catLabel:'Metabólico',size:'10 MG',price:349000,img:'assets/vial-glp1sm.png',desc:'Análogo de semaglutida. Investigación in vitro en señalización de incretinas y metabolismo.'},
+    {id:'glp2tz',name:'GLP-2 (TZ)',cat:'meta',catLabel:'Metabólico',size:'20 MG',price:495000,img:'assets/vial-glp2tz.png',desc:'Análogo de tirzepatida. Doble agonista GIP/GLP-1 para estudios metabólicos in vitro.'},
+    {id:'glp3rt10',name:'GLP-3 (RT)',cat:'meta',catLabel:'Metabólico',size:'10 MG',price:523000,featured:true,img:'assets/vial-glp3rt10.png',desc:'Análogo de retatrutida. Triple agonista GIP/GLP-1/glucagón. Investigación en metabolismo energético.'},
+    {id:'glp3rt20',name:'GLP-3 (RT)',cat:'meta',catLabel:'Metabólico',size:'20 MG',price:804000,img:'assets/vial-glp3rt20.png',desc:'Análogo de retatrutida. Vial de alta concentración para estudios metabólicos prolongados.'},
+    {id:'klow',name:'KLOW',cat:'regen',catLabel:'Regeneración',size:'80 MG',price:687000,img:'assets/vial-klow.png',desc:'Mezcla peptídica avanzada para investigación dérmica y regenerativa.'},
+    {id:'ghkcu',name:'GHK-Cu',cat:'regen',catLabel:'Regeneración',size:'100 MG',price:278000,featured:true,img:'assets/vial-ghkcu.png',desc:'Tripéptido cobre. Investigación en remodelación de tejidos y matriz extracelular.'},
+    {id:'glow',name:'GLOW',cat:'regen',catLabel:'Regeneración',size:'70 MG',price:590000,img:'assets/vial-glow.png',desc:'Mezcla peptídica para investigación en piel, cabello y matriz cutánea.'},
+    {id:'mt2',name:'Melanotan 2',cat:'regen',catLabel:'Regeneración',size:'10 MG',price:204000,img:'assets/vial-mt2.png',desc:'Análogo sintético de la α-MSH. Estudios in vitro de pigmentación melánica.'},
+    {id:'motsc',name:'MOTS-C',cat:'long',catLabel:'Longevidad',size:'20 MG',price:633000,img:'assets/vial-motsc.png',desc:'Péptido mitocondrial derivado del ADNmt. Investigación en homeostasis energética.'},
+    {id:'nad',name:'NAD+',cat:'long',catLabel:'Longevidad',size:'100 MG',price:406000,img:'assets/vial-nad.png',desc:'Nicotinamida adenina dinucleótido. Investigación en metabolismo mitocondrial.'},
+    {id:'selank',name:'Selank',cat:'cogn',catLabel:'Cognitivo',size:'10 MG',price:204000,img:'assets/vial-selank.png',desc:'Heptapéptido nootrópico análogo de la tuftsina. Estudios in vitro de modulación de ansiedad.'},
+    {id:'semax',name:'Semax',cat:'cogn',catLabel:'Cognitivo',size:'10 MG',price:495000,img:'assets/vial-semax.png',desc:'Péptido nootrópico derivado de ACTH(4-10). Investigación in vitro de neuroprotección.'},
+  ];
+  const fmt=n=>'$'+Number(n).toLocaleString('es-CO');
+
+  const grid=document.getElementById('productGrid');
+  function renderCard(p){
+    const badge=p.featured?'<span class="card-badge">Destacado</span>':'';
+    const safeId=p.id;
+    const media = p.img
+      ? `<img class="card-vial card-photo" src="${p.img}" alt="${p.name} ${p.size} — Origen Peptides" loading="lazy"/>`
+      : `<svg class="card-vial" viewBox="0 0 120 200" xmlns="http://www.w3.org/2000/svg">
+            <defs><linearGradient id="g_${safeId}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e0e0e0"/><stop offset=".5" stop-color="#9a9a9a"/><stop offset="1" stop-color="#c4c4c4"/></linearGradient></defs>
+            <rect x="32" y="6" width="56" height="22" rx="2" fill="url(#g_${safeId})"/>
+            <rect x="36" y="26" width="48" height="8" rx="1" fill="#888"/>
+            <path d="M20 38 Q20 34 24 34 L96 34 Q100 34 100 38 L100 188 Q100 196 92 196 L28 196 Q20 196 20 188 Z" fill="#3d2e24"/>
+            <rect x="26" y="68" width="68" height="104" rx="2" fill="#1f1612"/>
+            <text x="60" y="98" text-anchor="middle" fill="#f5efe6" font-family="Inter" font-size="11" font-weight="700" letter-spacing="1">${p.name}</text>
+            <text x="60" y="116" text-anchor="middle" fill="#f5efe6" font-family="Inter" font-size="7" opacity=".8">${p.size}</text>
+            <text x="60" y="148" text-anchor="middle" fill="#f5efe6" font-family="Inter" font-size="5" opacity=".6" letter-spacing="1">RESEARCH USE ONLY</text>
+          </svg>`;
+    return `
+      <article class="card" data-cat="${p.cat}">
+        ${badge}
+        <span class="card-tested">3rd Party Tested</span>
+        <div class="card-img">${media}</div>
+        <div class="card-body">
+          <div class="card-cat">${p.catLabel} · ${p.size}</div>
+          <h3 class="card-title">${p.name}</h3>
+          <p class="card-desc">${p.desc}</p>
+          <div class="card-meta">
+            <div class="card-price">${fmt(p.price)} <small>COP</small></div>
+            <button class="card-add" data-id="${p.id}">Agregar</button>
+          </div>
+        </div>
+      </article>`;
+  }
+  grid.innerHTML=products.map(renderCard).join('');
+
+  // Filters
+  document.querySelectorAll('.filter-chip').forEach(chip=>{
+    chip.addEventListener('click',()=>{
+      document.querySelectorAll('.filter-chip').forEach(c=>c.classList.remove('active'));
+      chip.classList.add('active');
+      const cat=chip.dataset.cat;
+      document.querySelectorAll('.card').forEach(card=>{
+        card.style.display=(cat==='all'||card.dataset.cat===cat)?'flex':'none';
+      });
+    });
+  });
+
+  // FAQ
+  document.querySelectorAll('.faq-q').forEach(q=>{
+    q.addEventListener('click',()=>{
+      q.parentElement.classList.toggle('open');
+    });
+  });
+
+  // Reveal on scroll
+  const io=new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')});
+  },{threshold:.1});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // Affiliate modal
+  function openAffiliateModal(){
+    document.getElementById('affiliateModal').classList.add('is-open');
+    document.body.style.overflow='hidden';
+  }
+  function closeAffiliateModal(){
+    document.getElementById('affiliateModal').classList.remove('is-open');
+    document.body.style.overflow='';
+    // Reset to form view in case user reopens
+    setTimeout(()=>{
+      document.getElementById('affiliateFormView').style.display='';
+      document.getElementById('affiliateSuccessView').style.display='none';
+    },300);
+  }
+  function submitAffiliateForm(e){
+    e.preventDefault();
+    const form=e.target;
+    const data=new FormData(form);
+    // Build a clean email body for the team
+    const body=[
+      `Nueva postulación al programa de afiliados`,
+      ``,
+      `Nombre: ${data.get('nombre')}`,
+      `Ciudad: ${data.get('ciudad')}`,
+      `Email: ${data.get('email')}`,
+      `Teléfono/WhatsApp: ${data.get('telefono')}`,
+      `Redes sociales: ${data.get('redes')}`,
+      `Tamaño de audiencia: ${data.get('audiencia')}`,
+      `Nicho: ${data.get('nicho')}`,
+      ``,
+      `Mensaje:`,
+      data.get('mensaje')||'(sin mensaje)',
+    ].join('\n');
+    // Open user's email client with prefilled data — replace this email with your real inbox
+    const subject=encodeURIComponent(`Postulación afiliado — ${data.get('nombre')}`);
+    const mailto=`mailto:afiliados@origenpeptides.co?subject=${subject}&body=${encodeURIComponent(body)}`;
+    window.location.href=mailto;
+    // Show success view
+    document.getElementById('affiliateFormView').style.display='none';
+    document.getElementById('affiliateSuccessView').style.display='';
+    form.reset();
+  }
+  // Close on ESC
+  document.addEventListener('keydown',(e)=>{
+    if(e.key==='Escape'){
+      const m=document.getElementById('affiliateModal');
+      if(m&&m.classList.contains('is-open'))closeAffiliateModal();
+    }
+  });
+
+  /* ===== CART + WhatsApp checkout ===== */
+  const WHATSAPP="573104047215"; // +57 310 4047215
+  const byId=i=>products.find(p=>p.id===i);
+  let cart={}; try{cart=JSON.parse(localStorage.getItem('op_cart')||'{}')}catch(e){cart={}}
+  const saveCart=()=>{try{localStorage.setItem('op_cart',JSON.stringify(cart))}catch(e){}};
+  const cartCount=()=>Object.values(cart).reduce((a,b)=>a+b,0);
+  const cartTotal=()=>Object.entries(cart).reduce((a,[i,q])=>a+byId(i).price*q,0);
+  const elCount=document.getElementById('cartCount');
+  const elItems=document.getElementById('cartItems');
+  const elTotal=document.getElementById('cartTotalVal');
+  const elWa=document.getElementById('cartWa');
+  const cartOverlay=document.getElementById('cartOverlay');
+  const cartDrawer=document.getElementById('cartDrawer');
+  function renderCart(){
+    elCount.textContent=cartCount();
+    elTotal.textContent=fmt(cartTotal());
+    elWa.disabled=cartCount()===0;
+    const rows=Object.entries(cart).filter(([,q])=>q>0);
+    if(!rows.length){elItems.innerHTML='<div class="cart-empty">Tu carrito está vacío.<br>Agrega un compuesto del catálogo para comenzar.</div>';return;}
+    elItems.innerHTML=rows.map(([i,q])=>{const p=byId(i);return `
+      <div class="cart-row">
+        <div class="cart-thumb">${p.name}</div>
+        <div class="cart-info">
+          <div class="cart-name">${p.name}</div>
+          <div class="cart-sub">${p.size} · ${p.catLabel}</div>
+          <div class="cart-line">${fmt(p.price*q)}</div>
+          <div class="cart-qty"><button data-dec="${i}">&minus;</button><span>${q}</span><button data-inc="${i}">+</button></div>
+        </div>
+        <button class="cart-rm" data-rm="${i}">Quitar</button>
+      </div>`}).join('');
+  }
+  let toastT; function toast(m){const t=document.getElementById('toast');t.textContent=m;t.classList.add('show');clearTimeout(toastT);toastT=setTimeout(()=>t.classList.remove('show'),1800);}
+  function openCart(){cartDrawer.classList.add('open');cartOverlay.classList.add('open');document.body.style.overflow='hidden';}
+  function closeCart(){cartDrawer.classList.remove('open');cartOverlay.classList.remove('open');document.body.style.overflow='';}
+  document.getElementById('cartBtn').addEventListener('click',openCart);
+  document.getElementById('cartClose').addEventListener('click',closeCart);
+  cartOverlay.addEventListener('click',closeCart);
+  grid.addEventListener('click',e=>{
+    const b=e.target.closest('.card-add'); if(!b)return;
+    const id=b.dataset.id; cart[id]=(cart[id]||0)+1; saveCart(); renderCart(); toast('Agregado al carrito');
+    b.classList.add('added'); b.textContent='\u2713 Agregado'; setTimeout(()=>{b.classList.remove('added');b.textContent='Agregar';},1000);
+  });
+  elItems.addEventListener('click',e=>{
+    const t=e.target;
+    if(t.dataset.inc){cart[t.dataset.inc]++;saveCart();renderCart();}
+    else if(t.dataset.dec){const i=t.dataset.dec;cart[i]=Math.max(0,cart[i]-1);if(!cart[i])delete cart[i];saveCart();renderCart();}
+    else if(t.dataset.rm){delete cart[t.dataset.rm];saveCart();renderCart();}
+  });
+  elWa.addEventListener('click',()=>{
+    if(!cartCount())return;
+    let msg='Hola Origen Peptides, quiero realizar este pedido:%0A%0A';
+    Object.entries(cart).forEach(([i,q])=>{const p=byId(i);msg+=encodeURIComponent(`• ${q}× ${p.name} ${p.size} — ${fmt(p.price*q)}`)+'%0A';});
+    msg+='%0A'+encodeURIComponent(`Total: ${fmt(cartTotal())} COP`)+'%0A%0A'+encodeURIComponent('¿Me confirman disponibilidad y envío, por favor?');
+    window.open(`https://wa.me/${WHATSAPP}?text=${msg}`,'_blank');
+  });
+  renderCart();
+</script>
+</body>
+</html>
