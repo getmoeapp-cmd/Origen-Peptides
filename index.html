@@ -184,6 +184,8 @@
   .card:hover{background:var(--paper-warm)}
   .card-img{aspect-ratio:1/1;background:var(--paper-warm);position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;border-bottom:1px solid var(--line)}
   .card:hover .card-img{background:#e0d6c3}
+  .card-photo{height:86%;width:auto;object-fit:contain;filter:drop-shadow(0 12px 24px rgba(31,22,18,.18));transition:transform .35s ease}
+  .card:hover .card-photo{transform:translateY(-4px) scale(1.02)}
   .card-badge{position:absolute;top:16px;left:16px;font-size:9px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;padding:5px 10px;z-index:2;color:var(--ink);border:1px solid var(--ink);background:var(--paper)}
   .card-tested{position:absolute;top:16px;right:16px;font-size:9px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--mid);z-index:2;display:flex;align-items:center;gap:4px}
   .card-tested::before{content:"";width:5px;height:5px;border-radius:50%;background:#2d6a3d}
@@ -421,16 +423,7 @@
         <span class="card-badge">Destacado</span>
         <span class="card-tested">3rd Party Tested</span>
         <div class="card-img">
-          <svg class="card-vial" viewBox="0 0 120 200" xmlns="http://www.w3.org/2000/svg">
-            <defs><linearGradient id="g_GHKCu" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e0e0e0"/><stop offset=".5" stop-color="#9a9a9a"/><stop offset="1" stop-color="#c4c4c4"/></linearGradient></defs>
-            <rect x="32" y="6" width="56" height="22" rx="2" fill="url(#g_GHKCu)"/>
-            <rect x="36" y="26" width="48" height="8" rx="1" fill="#888"/>
-            <path d="M20 38 Q20 34 24 34 L96 34 Q100 34 100 38 L100 188 Q100 196 92 196 L28 196 Q20 196 20 188 Z" fill="#3d2e24"/>
-            <rect x="26" y="68" width="68" height="104" rx="2" fill="#1f1612"/>
-            <text x="60" y="98" text-anchor="middle" fill="#f5efe6" font-family="Inter" font-size="11" font-weight="700" letter-spacing="1">GHK-Cu</text>
-            <text x="60" y="116" text-anchor="middle" fill="#f5efe6" font-family="Inter" font-size="7" opacity=".8">100 MG</text>
-            <text x="60" y="148" text-anchor="middle" fill="#f5efe6" font-family="Inter" font-size="5" opacity=".6" letter-spacing="1">RESEARCH USE ONLY</text>
-          </svg>
+          <img class="card-photo" src="img-ghkcu.png" alt="GHK-Cu 100 MG — Origen Peptides" loading="lazy">
         </div>
         <div class="card-body">
           <div class="card-cat">Regeneración · 100 MG</div>
@@ -445,16 +438,7 @@
         
         <span class="card-tested">3rd Party Tested</span>
         <div class="card-img">
-          <svg class="card-vial" viewBox="0 0 120 200" xmlns="http://www.w3.org/2000/svg">
-            <defs><linearGradient id="g_BPC157" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e0e0e0"/><stop offset=".5" stop-color="#9a9a9a"/><stop offset="1" stop-color="#c4c4c4"/></linearGradient></defs>
-            <rect x="32" y="6" width="56" height="22" rx="2" fill="url(#g_BPC157)"/>
-            <rect x="36" y="26" width="48" height="8" rx="1" fill="#888"/>
-            <path d="M20 38 Q20 34 24 34 L96 34 Q100 34 100 38 L100 188 Q100 196 92 196 L28 196 Q20 196 20 188 Z" fill="#3d2e24"/>
-            <rect x="26" y="68" width="68" height="104" rx="2" fill="#1f1612"/>
-            <text x="60" y="98" text-anchor="middle" fill="#f5efe6" font-family="Inter" font-size="11" font-weight="700" letter-spacing="1">BPC-157</text>
-            <text x="60" y="116" text-anchor="middle" fill="#f5efe6" font-family="Inter" font-size="7" opacity=".8">10 MG</text>
-            <text x="60" y="148" text-anchor="middle" fill="#f5efe6" font-family="Inter" font-size="5" opacity=".6" letter-spacing="1">RESEARCH USE ONLY</text>
-          </svg>
+          <img class="card-photo" src="img-bpc157.png" alt="BPC-157 10 MG — Origen Peptides" loading="lazy">
         </div>
         <div class="card-body">
           <div class="card-cat">Regeneración · 10 MG</div>
@@ -493,16 +477,7 @@
         <span class="card-badge">Destacado</span>
         <span class="card-tested">3rd Party Tested</span>
         <div class="card-img">
-          <svg class="card-vial" viewBox="0 0 120 200" xmlns="http://www.w3.org/2000/svg">
-            <defs><linearGradient id="g_Retatrutide" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e0e0e0"/><stop offset=".5" stop-color="#9a9a9a"/><stop offset="1" stop-color="#c4c4c4"/></linearGradient></defs>
-            <rect x="32" y="6" width="56" height="22" rx="2" fill="url(#g_Retatrutide)"/>
-            <rect x="36" y="26" width="48" height="8" rx="1" fill="#888"/>
-            <path d="M20 38 Q20 34 24 34 L96 34 Q100 34 100 38 L100 188 Q100 196 92 196 L28 196 Q20 196 20 188 Z" fill="#3d2e24"/>
-            <rect x="26" y="68" width="68" height="104" rx="2" fill="#1f1612"/>
-            <text x="60" y="98" text-anchor="middle" fill="#f5efe6" font-family="Inter" font-size="11" font-weight="700" letter-spacing="1">Retatrutide</text>
-            <text x="60" y="116" text-anchor="middle" fill="#f5efe6" font-family="Inter" font-size="7" opacity=".8">10 MG</text>
-            <text x="60" y="148" text-anchor="middle" fill="#f5efe6" font-family="Inter" font-size="5" opacity=".6" letter-spacing="1">RESEARCH USE ONLY</text>
-          </svg>
+          <img class="card-photo" src="img-rt10.png" alt="Retatrutide 10 MG — Origen Peptides" loading="lazy">
         </div>
         <div class="card-body">
           <div class="card-cat">Metabólico · 10 MG</div>
@@ -517,16 +492,7 @@
         
         <span class="card-tested">3rd Party Tested</span>
         <div class="card-img">
-          <svg class="card-vial" viewBox="0 0 120 200" xmlns="http://www.w3.org/2000/svg">
-            <defs><linearGradient id="g_Retatrutide1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e0e0e0"/><stop offset=".5" stop-color="#9a9a9a"/><stop offset="1" stop-color="#c4c4c4"/></linearGradient></defs>
-            <rect x="32" y="6" width="56" height="22" rx="2" fill="url(#g_Retatrutide1)"/>
-            <rect x="36" y="26" width="48" height="8" rx="1" fill="#888"/>
-            <path d="M20 38 Q20 34 24 34 L96 34 Q100 34 100 38 L100 188 Q100 196 92 196 L28 196 Q20 196 20 188 Z" fill="#3d2e24"/>
-            <rect x="26" y="68" width="68" height="104" rx="2" fill="#1f1612"/>
-            <text x="60" y="98" text-anchor="middle" fill="#f5efe6" font-family="Inter" font-size="11" font-weight="700" letter-spacing="1">Retatrutide</text>
-            <text x="60" y="116" text-anchor="middle" fill="#f5efe6" font-family="Inter" font-size="7" opacity=".8">20 MG</text>
-            <text x="60" y="148" text-anchor="middle" fill="#f5efe6" font-family="Inter" font-size="5" opacity=".6" letter-spacing="1">RESEARCH USE ONLY</text>
-          </svg>
+          <img class="card-photo" src="img-rt20.png" alt="Retatrutide 20 MG — Origen Peptides" loading="lazy">
         </div>
         <div class="card-body">
           <div class="card-cat">Metabólico · 20 MG</div>
@@ -541,16 +507,7 @@
         
         <span class="card-tested">3rd Party Tested</span>
         <div class="card-img">
-          <svg class="card-vial" viewBox="0 0 120 200" xmlns="http://www.w3.org/2000/svg">
-            <defs><linearGradient id="g_NAD" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e0e0e0"/><stop offset=".5" stop-color="#9a9a9a"/><stop offset="1" stop-color="#c4c4c4"/></linearGradient></defs>
-            <rect x="32" y="6" width="56" height="22" rx="2" fill="url(#g_NAD)"/>
-            <rect x="36" y="26" width="48" height="8" rx="1" fill="#888"/>
-            <path d="M20 38 Q20 34 24 34 L96 34 Q100 34 100 38 L100 188 Q100 196 92 196 L28 196 Q20 196 20 188 Z" fill="#3d2e24"/>
-            <rect x="26" y="68" width="68" height="104" rx="2" fill="#1f1612"/>
-            <text x="60" y="98" text-anchor="middle" fill="#f5efe6" font-family="Inter" font-size="11" font-weight="700" letter-spacing="1">NAD+</text>
-            <text x="60" y="116" text-anchor="middle" fill="#f5efe6" font-family="Inter" font-size="7" opacity=".8">100 MG</text>
-            <text x="60" y="148" text-anchor="middle" fill="#f5efe6" font-family="Inter" font-size="5" opacity=".6" letter-spacing="1">RESEARCH USE ONLY</text>
-          </svg>
+          <img class="card-photo" src="img-nad.png" alt="NAD+ 100 MG — Origen Peptides" loading="lazy">
         </div>
         <div class="card-body">
           <div class="card-cat">Longevidad · 100 MG</div>
@@ -589,16 +546,7 @@
         
         <span class="card-tested">3rd Party Tested</span>
         <div class="card-img">
-          <svg class="card-vial" viewBox="0 0 120 200" xmlns="http://www.w3.org/2000/svg">
-            <defs><linearGradient id="g_MelanotanII" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e0e0e0"/><stop offset=".5" stop-color="#9a9a9a"/><stop offset="1" stop-color="#c4c4c4"/></linearGradient></defs>
-            <rect x="32" y="6" width="56" height="22" rx="2" fill="url(#g_MelanotanII)"/>
-            <rect x="36" y="26" width="48" height="8" rx="1" fill="#888"/>
-            <path d="M20 38 Q20 34 24 34 L96 34 Q100 34 100 38 L100 188 Q100 196 92 196 L28 196 Q20 196 20 188 Z" fill="#3d2e24"/>
-            <rect x="26" y="68" width="68" height="104" rx="2" fill="#1f1612"/>
-            <text x="60" y="98" text-anchor="middle" fill="#f5efe6" font-family="Inter" font-size="11" font-weight="700" letter-spacing="1">Melanotan II</text>
-            <text x="60" y="116" text-anchor="middle" fill="#f5efe6" font-family="Inter" font-size="7" opacity=".8">10 MG</text>
-            <text x="60" y="148" text-anchor="middle" fill="#f5efe6" font-family="Inter" font-size="5" opacity=".6" letter-spacing="1">RESEARCH USE ONLY</text>
-          </svg>
+          <img class="card-photo" src="img-mt2.png" alt="Melanotan II 10 MG — Origen Peptides" loading="lazy">
         </div>
         <div class="card-body">
           <div class="card-cat">Regeneración · 10 MG</div>
@@ -637,16 +585,7 @@
         
         <span class="card-tested">3rd Party Tested</span>
         <div class="card-img">
-          <svg class="card-vial" viewBox="0 0 120 200" xmlns="http://www.w3.org/2000/svg">
-            <defs><linearGradient id="g_KLOW" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e0e0e0"/><stop offset=".5" stop-color="#9a9a9a"/><stop offset="1" stop-color="#c4c4c4"/></linearGradient></defs>
-            <rect x="32" y="6" width="56" height="22" rx="2" fill="url(#g_KLOW)"/>
-            <rect x="36" y="26" width="48" height="8" rx="1" fill="#888"/>
-            <path d="M20 38 Q20 34 24 34 L96 34 Q100 34 100 38 L100 188 Q100 196 92 196 L28 196 Q20 196 20 188 Z" fill="#3d2e24"/>
-            <rect x="26" y="68" width="68" height="104" rx="2" fill="#1f1612"/>
-            <text x="60" y="98" text-anchor="middle" fill="#f5efe6" font-family="Inter" font-size="11" font-weight="700" letter-spacing="1">KLOW</text>
-            <text x="60" y="116" text-anchor="middle" fill="#f5efe6" font-family="Inter" font-size="7" opacity=".8">80 MG</text>
-            <text x="60" y="148" text-anchor="middle" fill="#f5efe6" font-family="Inter" font-size="5" opacity=".6" letter-spacing="1">RESEARCH USE ONLY</text>
-          </svg>
+          <img class="card-photo" src="img-klow.png" alt="KLOW 80 MG — Origen Peptides" loading="lazy">
         </div>
         <div class="card-body">
           <div class="card-cat">Regeneración · 80 MG</div>
@@ -661,16 +600,7 @@
         
         <span class="card-tested">3rd Party Tested</span>
         <div class="card-img">
-          <svg class="card-vial" viewBox="0 0 120 200" xmlns="http://www.w3.org/2000/svg">
-            <defs><linearGradient id="g_GLOW" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e0e0e0"/><stop offset=".5" stop-color="#9a9a9a"/><stop offset="1" stop-color="#c4c4c4"/></linearGradient></defs>
-            <rect x="32" y="6" width="56" height="22" rx="2" fill="url(#g_GLOW)"/>
-            <rect x="36" y="26" width="48" height="8" rx="1" fill="#888"/>
-            <path d="M20 38 Q20 34 24 34 L96 34 Q100 34 100 38 L100 188 Q100 196 92 196 L28 196 Q20 196 20 188 Z" fill="#3d2e24"/>
-            <rect x="26" y="68" width="68" height="104" rx="2" fill="#1f1612"/>
-            <text x="60" y="98" text-anchor="middle" fill="#f5efe6" font-family="Inter" font-size="11" font-weight="700" letter-spacing="1">GLOW</text>
-            <text x="60" y="116" text-anchor="middle" fill="#f5efe6" font-family="Inter" font-size="7" opacity=".8">70 MG</text>
-            <text x="60" y="148" text-anchor="middle" fill="#f5efe6" font-family="Inter" font-size="5" opacity=".6" letter-spacing="1">RESEARCH USE ONLY</text>
-          </svg>
+          <img class="card-photo" src="img-glow.png" alt="GLOW 70 MG — Origen Peptides" loading="lazy">
         </div>
         <div class="card-body">
           <div class="card-cat">Regeneración · 70 MG</div>
